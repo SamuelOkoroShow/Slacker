@@ -21,8 +21,7 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <Nav />
-      <Footer />
+      <Text></Text>
       </View>
     );
   }

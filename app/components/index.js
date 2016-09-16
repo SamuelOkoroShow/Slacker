@@ -9,12 +9,9 @@ import {
   View
 } from 'react-native';
 
-import Clips from './clips'
+
 import Home from './home'
-import News from './news'
-import Shop from './shop'
-import Show from './show'
-import EachArticle from './eachArticle'
+
 
 
 
@@ -35,33 +32,7 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
-    if (routeId === 'news') {
-      return (
-        <News
-        {...this.props} 
-        navigator={navigator} />
-        );
-    }
-    if (routeId === 'shop') {
-      return (
-        <Shop
-        {...this.props} 
-        navigator={navigator} />
-        );
-    }if (routeId === 'show') {
-      return (
-        <Show
-        {...this.props} 
-        navigator={navigator} />
-        );
-    }
-    if (routeId === 'eachArticle') {
-      return (
-        <EachArticle
-        {...this.props} 
-        navigator={navigator} />
-        );
-    }
+    
   
    }
 
