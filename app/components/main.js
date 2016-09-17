@@ -26,8 +26,19 @@ export default class Splash extends Component {
   constructor(props){
     super(props)
     this.state = {
-      top:0
+      top: height * -1
     }
+  }
+
+  componentDidMount(){
+        setTimeout(() => {this.animate()}, 1000);
+  }
+
+  animate(){
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
+    this.setState({
+      top:0
+    })
   }
 
   overLay(){
