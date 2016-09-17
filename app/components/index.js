@@ -43,7 +43,7 @@ export default class Index extends Component {
     }
     if (routeId === 'main') {
       return (
-        <Splash
+        <Main
         {...this.props} 
         navigator={navigator} />
         );
