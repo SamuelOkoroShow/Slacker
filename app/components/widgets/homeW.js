@@ -29,7 +29,7 @@ export default class HomeWid extends Component {
   }
 
   minimize(){
-         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
+         LayoutAnimation.configureNext(LayoutAnimation.Presets.linear)
     this.setState({
       height:0
     })
