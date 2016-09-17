@@ -11,6 +11,7 @@ import {
 
 
 import Home from './home'
+import Splash from './splash'
 
 
 
@@ -32,6 +33,13 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
+    if (routeId === 'splash') {
+      return (
+        <Splash
+        {...this.props} 
+        navigator={navigator} />
+        );
+    }
     
   
    }
@@ -43,7 +51,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'home', name: 'home'}}
+     initialRoute={{id: 'splash', name: 'splash'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )
