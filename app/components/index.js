@@ -12,6 +12,7 @@ import {
 
 import Home from './home'
 import Splash from './splash'
+import Search from './search'
 import Main from './main'
 
 
@@ -48,6 +49,13 @@ export default class Index extends Component {
         navigator={navigator} />
         );
     }
+     if (routeId === 'search') {
+      return (
+        <Search
+        {...this.props} 
+        navigator={navigator} />
+        );
+    }
     
   
    }
@@ -59,7 +67,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'main', name: 'main'}}
+     initialRoute={{id: 'search', name: 'search'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )
