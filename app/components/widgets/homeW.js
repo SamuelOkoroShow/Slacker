@@ -23,24 +23,23 @@ export default class HomeWid extends Component {
     super(props)
 
     this.state = {
-      height: height,
-      width: width
+     left:0
     }
   }
 
   minimize(){
          LayoutAnimation.configureNext(LayoutAnimation.Presets.linear)
     this.setState({
-      height:0
+      left: width * -1
     })
 
   }
   render() {
     return (
-      <TouchableOpacity onPress={() => this.minimize()} style={{height:this.state.height, width:this.state.width}}>
+      <TouchableOpacity onPress={() => this.minimize()} style={{position:'absolute', top:0, left:this.state.left, height:height, width:width}}>
       <Image source ={require('../../images/back.png')} resizeMode = 'contain' style={{flex:1, justifyContent:'center',alignItems:'center', height:null, width:null}}>
       <View style={{flex:19, alignItems:'center', justifyContent:'center'}}>
-      <Image source={require('../../images/logo1.png')} resizeMode = 'contain' style={{height:70,width:70, margin:5, marginTop:0}} />
+      <Image source={require('../../images/logo1.png')} resizeMode = 'contain' style={{height:50,width:50, margin:5, marginTop:0}} />
       <Text style={{color:'#ff7007', fontWeight:'500', marginLeft:9, letterSpacing: 3, fontSize:30}}>SLACKER</Text>
       <Text style={{color:'#fff', fontSize:11, fontWeight:'600'}}>RADIO</Text>
       </View>

@@ -41,10 +41,14 @@ export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-      <HomeW />
+     
+      <View>
       <Slide1 />
       <Slide2 />
       <Slide3 />
+
+      </View>
+       <HomeW />
       </View>
     );
   }
@@ -53,6 +57,7 @@ export default class Home extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection:'row'
 }}
 );
 
