@@ -18,6 +18,24 @@ import {
   View
 } from 'react-native';
 
+var internet = require('../images/theInternet.jpg');
+var sober = require('../images/sober.png');
+var royalty = require('../images/royalty.jpg');
+
+var albums = [
+  {
+    name:'Because the Internet',
+    image: internet
+  },
+    {
+    name:'Kauai',
+    image: sober
+  },
+    {
+    name:'Royalty',
+    image: royalty
+  }
+]
 var {height, width} = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -28,11 +46,21 @@ export default class Splash extends Component {
   constructor(props){
     super(props)
     this.state = {
-      top:0
+      top:0,
+      text: ""
     }
   }
 
-  
+  eachAlbum(x){
+    return(<View style={{height:180, margin:10, width:150, backgroundColor:'#fff'}}>
+      <Image source={x.image} resizeMode="contain" style={{width:150, height:150}} />
+        <View style={{backgroundColor:'#fff'}}>
+        <Text style={{margin:10, fontSize:12, color:'#666'}}>
+        {x.name}
+        </Text>
+        </View>
+        </View>)
+  }
  loaded(){
   return(
     <View>
@@ -77,13 +105,40 @@ export default class Splash extends Component {
 </View>
     )
  }
+
+ discover(){
+  return(
+    <View></View>
+    )
+ }
+
+ renderArtist(){
+  LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
+  if(this.state.text == "Childish"){
+      return (
+  <View style={{flex:1}} >
+  <View>
+    {this.loaded()}
+    </View>
+    <ScrollView horizontal={true} style={{flex:1}}>
+    {this.eachAlbum(albums[0])}
+    {this.eachAlbum(albums[1])}
+    {this.eachAlbum(albums[2])}
+    </ScrollView>
+  </View>)}else{
+      this.discover();
+      }
+ }
+
+
   render() {
     return (
 <View style={{flex:1, backgroundColor:'#e3e3e3'}}>
 <TextInput
+  onChangeText={(text) => this.setState({text})}
   style={{height:50, width:width, backgroundColor:'#1f232c', color:'#fff', padding:10}} />
-  {this.loaded()}
-  <ScrollView horizontal={true}></ScrollView>
+  <Icon name = "search" color='#fff' size={20} style={{position:'absolute', right:10, top:15, backgroundColor:'rgba(0,0,0,0)'}} />
+  {this.renderArtist()}
 </View>
     );
   }
