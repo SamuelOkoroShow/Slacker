@@ -52,8 +52,8 @@ export default class Splash extends Component {
   }
 
   eachAlbum(x){
-    return(<View style={{height:180, margin:10, width:150, backgroundColor:'#fff'}}>
-      <Image source={x.image} resizeMode="contain" style={{width:150, height:150}} />
+    return(<View style={{height:210, margin:10, width:180, backgroundColor:'#fff'}}>
+      <Image source={x.image} resizeMode="contain" style={{width:180, height:180}} />
         <View style={{backgroundColor:'#fff'}}>
         <Text style={{margin:10, fontSize:12, color:'#666'}}>
         {x.name}
