@@ -14,6 +14,7 @@ import {
   ScrollView,
   LayoutAnimation,
   Dimensions,
+  ListView,
   TouchableOpacity,
   View
 } from 'react-native';
@@ -21,6 +22,47 @@ import {
 var internet = require('../images/theInternet.jpg');
 var sober = require('../images/sober.png');
 var royalty = require('../images/royalty.jpg');
+var image1 = require('../images/image1.png');
+var image2 = require('../images/image2.png');
+var image3 = require('../images/image3.png');
+var image4 = require('../images/image4.png');
+var image5 = require('../images/image5.png');
+var image6 = require('../images/image6.png');
+var image7 = require('../images/image7.png');
+
+
+var holderAlbums =[
+{
+  name: 'The Other Side',
+  artist: 'Jason Derulo',
+  image: image1
+},{
+  name: 'Happy',
+  artist: 'Pharrel Williams',
+  image: image2
+},{
+  name: 'End Of Time',
+  artist: 'Beyonce',
+  image: image3
+},{
+  name: 'Demonds',
+  artist: 'Image Dragons',
+  image: image4
+},{
+  name: 'Rolling In The Deep',
+  artist: 'Adele',
+  image: image5
+},
+{
+  name: 'Work Music',
+  artist: '12 Artists',
+  image: image6
+},{
+  name: 'Relaxing',
+  artist: '6 Artists',
+  image: image7
+}
+]
 
 var albums = [
   {
@@ -41,12 +83,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Nav from './widgets/nav';
 
-
+var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 export default class Splash extends Component {
   constructor(props){
     super(props)
     this.state = {
       top:0,
+      dataSource: ds.cloneWithRows(holderAlbums),
       text: ""
     }
   }
@@ -105,10 +148,30 @@ export default class Splash extends Component {
 </View>
     )
  }
+eachBlock(x){
+  return(<View style={{height:210, margin:10, width:150, backgroundColor:'#fff'}}>
+      <Image source={x.image} resizeMode="contain" style={{width:150, height:150}} />
+        <View style={{backgroundColor:'#fff'}}>
+        <Text style={{margin:10, marginBottom:0, fontSize:12, color:'#666'}}>
+        {x.name}
+        </Text>
+        <Text style={{margin:10, fontSize:12, color:'#666'}}>
+        {x.artist}
+        </Text>
+        </View>
+        <View style={{backgroundColor:'#e3e3e3'}}>
+        <Text style={{margin:5, fontSize:12, color:'#666'}}>
+        Share Album
+        </Text></View>
+        </View>) 
+}
 
  discover(){
   return(
-    <View></View>
+    <ListView
+    dataSource = {this.state.dataSource}
+    contentContainerStyle = {{justifyContent: 'center', flexDirection: 'row', flexWrap: 'wrap'}}
+    renderRow = {(rowData) => this.eachBlock(rowData)}/>
     )
  }
 
@@ -126,7 +189,7 @@ export default class Splash extends Component {
     {this.eachAlbum(albums[2])}
     </ScrollView>
   </View>)}else{
-      this.discover();
+        return this.discover();
       }
  }
 
@@ -135,6 +198,8 @@ export default class Splash extends Component {
     return (
 <View style={{flex:1, backgroundColor:'#e3e3e3'}}>
 <TextInput
+  placeholder = "Search"
+  placeholderTextColor ="#f4f4f4"
   onChangeText={(text) => this.setState({text})}
   style={{height:50, width:width, backgroundColor:'#1f232c', color:'#fff', padding:10}} />
   <Icon name = "search" color='#fff' size={20} style={{position:'absolute', right:10, top:15, backgroundColor:'rgba(0,0,0,0)'}} />
