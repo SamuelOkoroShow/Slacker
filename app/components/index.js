@@ -75,7 +75,7 @@ export default class Index extends Component {
      <Navigator
      style={{flex: 1}}
      ref={'NAV'}
-     initialRoute={{id: 'eachSong', name: 'eachSong'}}
+     initialRoute={{id: 'splash', name: 'splash'}}
      renderScene={this.renderScene.bind(this)}/>
         </View>
     )
