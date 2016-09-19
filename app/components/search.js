@@ -149,7 +149,7 @@ export default class Splash extends Component {
     )
  }
 eachBlock(x){
-  return(<View style={{height:210, margin:10, width:150, backgroundColor:'#fff'}}>
+  return(<View style={{height:230, margin:10, width:150, backgroundColor:'#fff'}}>
       <Image source={x.image} resizeMode="contain" style={{width:150, height:150}} />
         <View style={{backgroundColor:'#fff'}}>
         <Text style={{margin:10, marginBottom:0, fontSize:12, color:'#666'}}>
@@ -159,8 +159,8 @@ eachBlock(x){
         {x.artist}
         </Text>
         </View>
-        <View style={{backgroundColor:'#e3e3e3'}}>
-        <Text style={{margin:5, fontSize:12, color:'#666'}}>
+        <View style={{backgroundColor:'#f7f7f7'}}>
+        <Text style={{margin:8, fontSize:12, color:'#666'}}>
         Share Album
         </Text></View>
         </View>) 
@@ -196,7 +196,7 @@ eachBlock(x){
 
   render() {
     return (
-<View style={{flex:1, backgroundColor:'#e3e3e3'}}>
+<View style={{flex:1, backgroundColor:'#e9e9e9'}}>
 <TextInput
   placeholder = "Search"
   placeholderTextColor ="#f4f4f4"
