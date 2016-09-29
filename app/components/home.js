@@ -45,7 +45,7 @@ export default class Home extends Component {
       <View>
       <Slide1 />
       <Slide2 />
-      <Slide3 />
+      <Slide3 {...this.props} />
 
       </View>
        <HomeW />

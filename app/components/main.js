@@ -52,7 +52,7 @@ export default class Splash extends Component {
 <Text style={{textAlign:'center', fontWeight:'500', fontSize:13, margin:6, width:250, color:'#444'}}>HAND CRAFTED TO DELIVER THE PERFECT MUSIC FOR ANY MOMENT</Text>
 </View>
 <View style={{flexDirection:'row', justifyContent:'space-around', width:280, margin:10}}>
-<TouchableOpacity><View style={{height:100, margin:10, width:100, borderRadius:50, alignSelf:'center', backgroundColor:'#dd580d', alignItems:'center', justifyContent:'center'}}><Icon name="search" color="#fff" size={40} /></View>
+<TouchableOpacity onPress={() => this.props.navigator.push({id:'search'})}><View style={{height:100, margin:10, width:100, borderRadius:50, alignSelf:'center', backgroundColor:'#dd580d', alignItems:'center', justifyContent:'center'}}><Icon name="search" color="#fff" size={40} /></View>
 <Text style={{fontWeight:'600', fontSize:15, color:'#666', textAlign:'center', margin:8}}>SEARCH</Text>
 <Text style={{fontSize:11, color:'#666', }}>ARTIST OR GENRE</Text>
 </TouchableOpacity>

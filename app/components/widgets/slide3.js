@@ -20,7 +20,7 @@ var {height, width} = Dimensions.get('window');
 export default class Slide3 extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <TouchableOpacity onPress = {() => this.props.navigator.push({id:'main'})} style={styles.container}>
       <Image source = {require('../../images/zak.png')} resizeMode="contain" style={{flex:1, width:null, height:null}}>
       <Image source = {require('../../images/overlay2.png')} resizeMode="contain" style={{flex:1, width:null, height:null, }}>
       <View style={{flex:9, alignItems:'center', justifyContent:'center'}}>
@@ -36,7 +36,7 @@ export default class Slide3 extends Component {
       </View>
       </Image>
       </Image>
-      </View>
+      </TouchableOpacity>
     );
   }
 }

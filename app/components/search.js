@@ -123,8 +123,10 @@ export default class Splash extends Component {
      <Text style={{color:'#444', fontSize:14, fontWeight:'600'}}>Slacker Top 40</Text>
     <Text style={{color:'#555', fontSize:12}}>Childish Gambino: Royalty</Text>
     </View>
+    <TouchableOpacity onPress = {() => this.props.navigator.push({id:'eachSong'})} >
     <Icon name = "play-circle-outline" size={34} color="backgroundColor:'rgba(220,88,14,0.7)" style={{margin:10}} />
-  </View>
+  </TouchableOpacity>
+      </View>
   <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between', borderBottomWidth:1, borderColor:'#f7f7f7'}}>
     <Image source={require('../images/popHit.png')} resizeMode="contain" style={{height:50, width:50, margin:10}} />
     <View>
